@@ -1,5 +1,6 @@
 package com.filip.worklearning.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,9 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
     }
+
+    @FindBy(css = ".close-cookie-warning > span")
+    private WebElement cookieElement;
 
     @FindBy(css = ".toggle")
     private WebElement toggleOption;
@@ -70,6 +74,13 @@ public class HomePage extends BasePage {
     @FindBy(linkText = "ABOUT ME")
     private WebElement aboutMeLink;
 
+    public void clickCookie() {
+        elementMethods.clickElement(cookieElement);
+    }
 
+    public void openTestStore() {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", testStoreLink);
+        elementMethods.clickElement(testStoreLink);
+    }
 
 }
