@@ -46,4 +46,29 @@ public class OrderFormDelivery extends BasePage {
     @FindBy(css = "button[name='confirm-addresses']")
     private WebElement continueBtn;
 
+    public void enterOrderAddress() {
+        elementMethods.fillElement(addressField, propertiesFile.getValue("address"));
+    }
+
+    public void enterOrderCity() {
+        elementMethods.fillElement(cityField, propertiesFile.getValue("city"));
+    }
+
+    public void selectOrderState() {
+        elementMethods.selectDropDownText(stateDropdown, propertiesFile.getValue("state"));
+    }
+
+    public void enterOrderPostalCode() {
+        elementMethods.fillElement(postcodeField, propertiesFile.getValue("postCode"));
+    }
+
+    public void enterOrderPhoneNumber() {
+        elementMethods.scrollToElementJS(phoneField);
+        elementMethods.fillElement(phoneField, propertiesFile.getValue("phoneNr"));
+    }
+
+    public void clickContinueFromOrderAddress() {
+        elementMethods.clickElement(continueBtn);
+    }
+
 }

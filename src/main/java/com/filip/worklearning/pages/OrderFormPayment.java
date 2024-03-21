@@ -16,11 +16,22 @@ public class OrderFormPayment extends BasePage {
     @FindBy(xpath = "//span[.='Pay by bank wire']")
     private WebElement payByWire;
 
-    @FindBy(xpath = "//input[@id='conditions_to_approve[terms-and-conditions]']")
+    @FindBy(xpath = "//label[@class='js-terms']")
     private WebElement payByCtermsAndConditionsheck;
 
     @FindBy(xpath = "//div[@id='payment-confirmation']//button[@type='submit']")
     private WebElement orderBtn;
 
+    public void selectPayByWire() {
+        elementMethods.clickElement(payByCheck);
+    }
+
+    public void selectPayTerms() {
+        elementMethods.clickElement(payByCtermsAndConditionsheck);
+    }
+
+    public void clickOnOrderToFinalize() {
+        elementMethods.clickElement(orderBtn);
+    }
 
 }

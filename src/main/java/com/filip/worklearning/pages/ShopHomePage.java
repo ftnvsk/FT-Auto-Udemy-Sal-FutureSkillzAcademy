@@ -34,8 +34,31 @@ public class ShopHomePage extends BasePage{
     @FindBy(linkText = "Mug Today Is A Good Day")
     private WebElement productEight;
 
+    @FindBy(linkText = "Contact us")
+    private WebElement contactUSLink;
+
+    @FindBy(xpath = "//span[text()='Sign in']")
+    private WebElement signInForm;
+
+    @FindBy(css = ".no-account > a")
+    private WebElement createNewAccountLink;
+
     public void clickProdOne() {
         elementMethods.clickElement(productOne);
+    }
+
+    public void clickOnContactUsForm() {
+        elementMethods.clickElement(contactUSLink);
+    }
+
+    public void clickOnSignInLink() {
+        elementMethods.clickElement(signInForm);
+    }
+
+    public void clickOnCreateNewAccount() {
+        clickOnSignInLink();
+        elementMethods.waitVisibleElement(createNewAccountLink);
+        elementMethods.clickElement(createNewAccountLink);
     }
 
 }

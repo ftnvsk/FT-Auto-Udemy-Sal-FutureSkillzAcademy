@@ -16,4 +16,8 @@ public class OrderFormShippingMethod extends BasePage {
     @FindBy(css = "[name='confirmDeliveryOption']")
     private WebElement continueBtn;
 
+    public void clickOnDeliveryContinue() {
+        elementMethods.clickElement(continueBtn);
+    }
+
 }

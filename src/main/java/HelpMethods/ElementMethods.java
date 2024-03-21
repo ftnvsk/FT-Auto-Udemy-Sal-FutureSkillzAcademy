@@ -66,4 +66,9 @@ public class ElementMethods {
         Actions elAction = new Actions(driver);
         elAction.moveToElement(element).perform();
     }
+
+    public void scrollToElementJS(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
 }
