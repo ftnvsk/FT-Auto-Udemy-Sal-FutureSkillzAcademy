@@ -43,6 +43,15 @@ public class ShopHomePage extends BasePage{
     @FindBy(css = ".no-account > a")
     private WebElement createNewAccountLink;
 
+    @FindBy(css = "input[name='submitNewsletter']")
+    private WebElement subscribeToNewsLetterButton;
+
+    @FindBy(css = ".input-wrapper>input[name='email']")
+    private WebElement inputSubscribeEmail;
+
+    @FindBy(css = "p.alert-success")
+    private WebElement successSubscriptionNewsletterMessage;
+
     public void clickProdOne() {
         elementMethods.clickElement(productOne);
     }
@@ -59,6 +68,28 @@ public class ShopHomePage extends BasePage{
         clickOnSignInLink();
         elementMethods.waitVisibleElement(createNewAccountLink);
         elementMethods.clickElement(createNewAccountLink);
+    }
+
+    public boolean isUserOnStoreHomePage() {
+        return elementMethods.isElementVisible(signInForm) && elementMethods.isElementVisible(contactUSLink);
+    }
+
+    public void goToNewsletterSubscription() {
+        elementMethods.scrollToElement(subscribeToNewsLetterButton);
+    }
+
+    public boolean isNewsLetterSectionVisible() {
+       return elementMethods.isElementVisible(subscribeToNewsLetterButton) && elementMethods.isElementVisible(inputSubscribeEmail);
+    }
+
+    public void subscribeToNewsLetter(String userEmail) {
+        elementMethods.fillElement(inputSubscribeEmail, userEmail);
+        elementMethods.clickElement(subscribeToNewsLetterButton);
+    }
+
+    public boolean isUserSubscribedToNewsletter() {
+        elementMethods.waitVisibleElement(successSubscriptionNewsletterMessage);
+        return elementMethods.isElementVisible(successSubscriptionNewsletterMessage);
     }
 
 }

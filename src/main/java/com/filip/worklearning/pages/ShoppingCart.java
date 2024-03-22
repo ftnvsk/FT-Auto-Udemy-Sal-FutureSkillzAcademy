@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class ShoppingCart extends BasePage {
 
-
-
     public ShoppingCart(WebDriver driver) {
         super(driver);
     }
@@ -47,6 +45,10 @@ public class ShoppingCart extends BasePage {
 
     public void proceedCheckout() {
         elementMethods.clickElement(proceedToCheckoutBtn);
+    }
+
+    public boolean isUserOnShoppingCartPage() {
+        return elementMethods.isElementVisible(deleteItemOne) && elementMethods.isElementVisible(totalValue);
     }
 
 }

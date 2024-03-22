@@ -78,6 +78,7 @@ public class HomePage extends BasePage {
     }
 
     public void openTestStore() {
+        elementMethods.clickElement(cookieElement);
         elementMethods.scrollToElementJS(testStoreLink);
         elementMethods.clickElement(testStoreLink);
     }

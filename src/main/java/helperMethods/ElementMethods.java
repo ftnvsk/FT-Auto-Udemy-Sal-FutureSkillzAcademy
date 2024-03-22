@@ -1,4 +1,4 @@
-package HelpMethods;
+package helperMethods;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -15,7 +15,10 @@ public class ElementMethods {
 
     public ElementMethods(WebDriver driver) {
         this.driver = driver;
+        this.elementAction = new Actions(driver);
     }
+
+    private final Actions elementAction;
 
     // WAIT
     // 2 feluri de wait: implicit si explicit
@@ -69,6 +72,14 @@ public class ElementMethods {
 
     public void scrollToElementJS(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public void scrollToElement(WebElement element) {
+        elementAction.scrollToElement(element).perform();
+    }
+
+    public boolean isElementVisible(WebElement element) {
+        return element.isDisplayed();
     }
 
 }

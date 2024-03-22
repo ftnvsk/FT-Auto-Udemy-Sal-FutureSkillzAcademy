@@ -1,11 +1,8 @@
 package com.filip.worklearning.pages;
 
-import HelpMethods.ElementMethods;
-import com.filip.worklearning.SeleniumConfig.WebDriverInstance;
+import helperMethods.ElementMethods;
 import com.filip.worklearning.inputFiles.PropertiesFile;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
