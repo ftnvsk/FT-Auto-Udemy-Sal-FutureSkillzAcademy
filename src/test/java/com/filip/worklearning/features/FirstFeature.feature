@@ -18,5 +18,5 @@ Feature: Filip First Tests with Cucumber
     And The user enters the "<UserEmail>" to subscribe to newsletter
     Then The user is notified that he has successfully subscribed to the newsletter
     Examples:
-      | UserEmail                  |
-      | randommail@nonexisting.com |
+      | UserEmail          |
+      | randoeeail@ssa.com |
