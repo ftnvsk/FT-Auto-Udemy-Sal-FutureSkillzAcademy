@@ -13,10 +13,10 @@ Feature: Filip First Tests with Cucumber
     And The user clicks on Proceed to Checkout
     Then The user is taken to the Shopping Cart page
 
-  Scenario Outline: User is able to subscrible to the newsletter from the bottom of the page
+  Scenario Outline: User is able to subscribe to the newsletter from the bottom of the page
     When The user scrolls to the newsletter section at the bottom of the page
     And The user enters the "<UserEmail>" to subscribe to newsletter
     Then The user is notified that he has successfully subscribed to the newsletter
     Examples:
       | UserEmail          |
-      | randoeeail@ssa.com |
+      | randoeeail@seea.com |
