@@ -19,4 +19,4 @@ Feature: Filip First Tests with Cucumber
     Then The user is notified that he has successfully subscribed to the newsletter
     Examples:
       | UserEmail          |
-      | randoeeail@seea.com |
+      | randxeeail@sea.com |

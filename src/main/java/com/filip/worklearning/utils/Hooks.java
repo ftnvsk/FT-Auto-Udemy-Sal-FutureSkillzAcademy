@@ -3,6 +3,7 @@ package com.filip.worklearning.utils;
 import com.filip.worklearning.inputFiles.PropertiesFile;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 public class Hooks {
 
@@ -15,8 +16,8 @@ public class Hooks {
 
     // The below will run after each Cucumber scenario
     @After
-    public void clearEnv() {
-        WebDriverInstance.cleanUpDriver();
+    public void clearEnv(Scenario scenario) {
+        WebDriverInstance.cleanUpDriver(scenario);
     }
 
 }

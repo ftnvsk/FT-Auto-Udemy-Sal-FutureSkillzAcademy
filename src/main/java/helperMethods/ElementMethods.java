@@ -28,7 +28,7 @@ public class ElementMethods {
     }
 
     public void waitVisibleElement(WebElement element) {
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(element));
     }
 
     public void fillElementHitEnter(WebElement element) {
