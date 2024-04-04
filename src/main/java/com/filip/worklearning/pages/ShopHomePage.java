@@ -75,7 +75,7 @@ public class ShopHomePage extends BasePage{
     }
 
     public void goToNewsletterSubscription() {
-        elementMethods.scrollToElement(subscribeToNewsLetterButton);
+        elementMethods.scrollToElement(inputSubscribeEmail);
     }
 
     public boolean isNewsLetterSectionVisible() {
